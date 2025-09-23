@@ -49,6 +49,7 @@ on init
 on boot
     setprop sys.usb.config adb
 
+on property:twrp.modules.loaded=true
     # Mount firmware
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
